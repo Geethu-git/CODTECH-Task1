@@ -1,0 +1,56 @@
+class Hospital:
+    def __init__(self, name):
+        self.name = name
+        self.patients = {}  # Stores patient_id: patient_details
+        self.doctors = {}   # Stores doctor_id: doctor_details
+
+    def add_patient(self, patient_id, name, age, condition):
+        if patient_id not in self.patients:
+            self.patients[patient_id] = {"name": name, "age": age, "condition": condition}
+            print(f"Patient {name} (ID: {patient_id}) added.")
+        else:
+            print(f"Patient with ID {patient_id} already exists.")
+
+    def add_doctor(self, doctor_id, name, specialization):
+        if doctor_id not in self.doctors:
+            self.doctors[doctor_id] = {"name": name, "specialization": specialization}
+            print(f"Doctor {name} (ID: {doctor_id}) added.")
+        else:
+            print(f"Doctor with ID {doctor_id} already exists.")
+
+    def display_patients(self):
+        print("\n--- Current Patients ---")
+        if not self.patients:
+            print("No patients registered yet.")
+            return
+        for p_id, details in self.patients.items():
+            print(f"ID: {p_id}, Name: {details['name']}, Age: {details['age']}, Condition: {details['condition']}")
+
+    def display_doctors(self):
+        print("\n--- Current Doctors ---")
+        if not self.doctors:
+            print("No doctors registered yet.")
+            return
+        for d_id, details in self.doctors.items():
+            print(f"ID: {d_id}, Name: {details['name']}, Specialization: {details['specialization']}")
+
+# --- How to use the Hospital Management System ---
+if __name__ == "__main__":
+    my_hospital = Hospital("City Central Hospital")
+    print(f"Welcome to {my_hospital.name} Management System!")
+
+    # Add some patients
+    my_hospital.add_patient("P001", "Alice Smith", 30, "Fever")
+    my_hospital.add_patient("P002", "Bob Johnson", 55, "Diabetes")
+    my_hospital.add_patient("P003", "Charlie Brown", 10, "Asthma")
+
+    # Add some doctors
+    my_hospital.add_doctor("D001", "Dr. Emily White", "Pediatrics")
+    my_hospital.add_doctor("D002", "Dr. John Doe", "General Medicine")
+
+    # Try adding an existing patient (will show a message)
+    my_hospital.add_patient("P001", "Alice Smith", 31, "Cold")
+
+    # Display lists
+    my_hospital.display_patients()
+    my_hospital.display_doctors()
