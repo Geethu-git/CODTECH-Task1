@@ -15,3 +15,5 @@ Conflict Resolution:Simulated merge conflicts by editing the same lines in diffe
 Commit History Review:Used git log to review commit history and ensure clarity of project development.
 Documentation:Documented the steps followed for merge conflict resolution.
 Maintained records of branch naming, commit messages, and issues resolved.
+![image](https://github.com/user-attachments/assets/3ab70475-1237-458e-bcb2-a7092541861e)[Task1.docx](https://github.com/user-attachments/files/20573682/Task1.docx)
+
